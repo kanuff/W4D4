@@ -1,0 +1,12 @@
+<h2>Login over here</h2>
+
+<form action="<%= session_url %>" method="POST">
+<%= auth_token %>
+<label for="email">Emale address</label>
+<input type="text" name="user[email]" id="email">
+<br>
+<label for="password">Secret password</label>
+<input type="password" name="user[password]" id="password">
+<br>
+<input type="submit" value="I wanna listen">
+</form>

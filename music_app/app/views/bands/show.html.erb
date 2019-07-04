@@ -1,0 +1,18 @@
+<h3>Nand Bame: <%= @band.name %></h3>
+
+<form action="<%= edit_band_url(@band)%>" method = "POST">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="PATCH">
+  <input type="submit" value="Edit">
+</form>
+<br>
+<form action="<%= band_url(@band)%>" method = "POST">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="I hate this band destroy it">
+</form>
+<br>
+<br>
+
+
+Back to all bands: <a href="<%= bands_url %>">All Bands</a>

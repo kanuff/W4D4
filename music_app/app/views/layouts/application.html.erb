@@ -10,6 +10,42 @@
   </head>
 
   <body>
+    <h1>Mewsic App</h1>
+    <img class="logo" src="app/assets/images/mew.jpg" alt="Mewsic">
+
+
+
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error|%>
+        <%= error %>
+      <% end %>
+    <% end %>
+    <% if current_user %>
+
+      <h3>You are logged in as: <%= current_user.email  %></h3>
+      <form action="<%= session_url %>" method="POST">
+      <%= auth_token %>
+        <input type="hidden"
+               name="_method"
+               value="DELETE"
+        >
+        <input type="submit" value="Logout">
+      </form> 
+
+    <% else %>
+      <form class = "login" action="<%= new_user_url %>">
+        <%= auth_token %>
+        <input type="submit" value="Sign Up">
+      </form>
+
+      <form class = "login" action="<%= new_session_url %>">
+        <%= auth_token %>
+        <input type="submit" value="Login">
+      </form>
+
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
