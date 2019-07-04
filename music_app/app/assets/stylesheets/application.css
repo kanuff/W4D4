@@ -14,15 +14,38 @@
  *= require_self
  */
 
+.website-name {
+  background-color: blue;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+form input{
+  background-color: crimson;
+  color: aliceblue;
+  font-variant-caps: unicase
+}
+
+a {
+  text-emphasis-color: blue;
+  color: white;
+  background-color: inherit;
+}
+
+ul li {
+  color: limegreen;
+  background-color: crimson;
+  line-height: 150%; 
+}
 
 .login {
-   display: flex;
+   display: inline-flex;
    float: right
  }
 
- .logo {
+.logo {
    display: flex;
    width: 100px;
    height: 100px;

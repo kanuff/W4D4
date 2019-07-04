@@ -1,8 +1,5 @@
 class BandsController < ApplicationController
 
-
-
-
   def new
     @band = Band.new
     render :new
@@ -29,13 +26,13 @@ class BandsController < ApplicationController
   end
 
   def index
-    @bands = Band.all
+    @bands = Band.all.order(:id)
     render :index
   end
 
   def update
-    band = Band.update(band_params)
-    if band.save
+    band = Band.find_by(id: params[:id])
+    if band.update(band_params)
       redirect_to band_url(band)
     else
       flash.now[:errors] = ["Never heard of them"]
@@ -44,7 +41,7 @@ class BandsController < ApplicationController
   end
 
   def edit
-    @band = Band.find_by(id: params[id])
+    @band = Band.find_by(id: params[:id])
     render :edit
   end
 

@@ -1,8 +1,7 @@
 <h3>Nand Bame: <%= @band.name %></h3>
 
-<form action="<%= edit_band_url(@band)%>" method = "POST">
+<form action="<%= edit_band_url(@band)%>">
   <%= auth_token %>
-  <input type="hidden" name="_method" value="PATCH">
   <input type="submit" value="Edit">
 </form>
 <br>
@@ -12,7 +11,16 @@
   <input type="submit" value="I hate this band destroy it">
 </form>
 <br>
-<br>
 
+Band Albums:
+<% albums = @band.albums %>
+<ul>
+<% albums.each do |album| %>
+  <li><a href="<%= album_url(album) %>"><%= album.title %></a></li>
+<% end %>
+</ul>
+<a href="<%= new_band_albums_url(@band) %>">Add Album</a>
+<br>
+<br>
 
 Back to all bands: <a href="<%= bands_url %>">All Bands</a>

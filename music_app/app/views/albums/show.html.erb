@@ -1,0 +1,13 @@
+
+<% @album = Album.find_by(id: params[:id]) %>
+<h3>Check out this sick album</h3>
+
+<a href="<%= band_url(@album.band) %>"><%= @album.band.name %></a>
+
+<ul>
+  <li>Band Id: <%=@album.band_id%></li>
+  <li>Band Name: <%=@album.band.name%></li>
+  <li>Album Title: <%=@album.title%></li>
+  <li>Album: <%=@album.yr%></li>
+  <li>Studio: <%=@album.studio%></li>
+</ul>
