@@ -1,0 +1,9 @@
+<h3>Add a track</h3>
+
+
+<form action="<%= tracks_url %>" method="POST">
+  <%= auth_token %>
+  <label for="name">Track Name</label>
+  <input type="text" name="track[name]">
+
+</form>
